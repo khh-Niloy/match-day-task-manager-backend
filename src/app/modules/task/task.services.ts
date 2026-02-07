@@ -14,8 +14,6 @@ const getAllTask = async () => {
 
 const updateTask = async (id: string, task: ITask) => {
   const existingTask = await Task.findById(id);
-  console.log("existing", existingTask);
-  console.log("task", task);
   if (!existingTask) {
     throw new Error("Task not found");
   }
