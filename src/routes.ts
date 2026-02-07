@@ -5,7 +5,7 @@ export const routes = Router();
 
 const allRoutes = [
   {
-    path: "/task",
+    path: "/tasks",
     route: taskRoutes,
   },
 ];

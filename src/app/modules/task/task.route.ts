@@ -5,3 +5,4 @@ export const taskRoutes = Router();
 
 taskRoutes.post("/", taskController.createTask);
 taskRoutes.get("/", taskController.getAllTask);
+taskRoutes.patch("/:id/status", taskController.updateTask);
