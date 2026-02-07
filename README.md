@@ -43,11 +43,11 @@ Follow these steps to get the server running:
 ## Trade-offs
 
 - **No Auth for now**: I decided to skip authentication to focus on the core task management features. In a real app, this would be the first thing to add.
-- **Basic Error Handling**: Used a global error handler but it's pretty simple. It gets the job done for this version but could be more detailed.
+- **Centralized Error Handling**: All route-level errors are handled using try–catch, with a global error handler and an explicit 404 not found route in place. This provides consistent error responses for the current scope, while leaving room to extend error handling at the service and database layers as the system grows.
+- **Manual Validation**: I'm using basic logic for input checks right now. For a larger project, I should use a library like **Zod** to strictly verify all incoming data.
 
 ## What's Missing / Incomplete
 
 - **User Accounts**: Right now, all tasks are global. There's no way to have private accounts.
 - **Task Updates**: For now, you can't edit the title or description of a task once it's created.
 - **One Way Transitions**: Tasks can't go back to a previous state (like moving from "In Progress" back to "Todo").
-- **Input Validation**: I'm doing some basic checks, but it could be stricter to prevent bad data.
