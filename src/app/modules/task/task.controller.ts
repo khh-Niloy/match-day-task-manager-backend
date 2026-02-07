@@ -16,6 +16,21 @@ const createTask = async (req: Request, res: Response) => {
   }
 };
 
+const getAllTask = async (req: Request, res: Response) => {
+  try {
+    const result = await taskService.getAllTask();
+    responseManager.success(res, {
+      statusCode: 200,
+      success: true,
+      message: "Task fetched successfully",
+      data: result,
+    });
+  } catch (error) {
+    responseManager.error(res, error as Error, 400);
+  }
+};
+
 export const taskController = {
   createTask,
+  getAllTask,
 };
