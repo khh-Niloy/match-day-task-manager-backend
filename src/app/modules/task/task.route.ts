@@ -4,3 +4,4 @@ import { taskController } from "./task.controller";
 export const taskRoutes = Router();
 
 taskRoutes.post("/", taskController.createTask);
+taskRoutes.get("/", taskController.getAllTask);
