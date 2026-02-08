@@ -8,7 +8,7 @@ const createTask = async (task: ITask) => {
 };
 
 const getAllTask = async () => {
-  const result = await Task.find();
+  const result = await Task.find().sort({ createdAt: -1 });
   return result;
 };
 

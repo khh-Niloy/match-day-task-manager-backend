@@ -26,4 +26,6 @@ const taskSchema = new Schema<ITask>(
   },
 );
 
+taskSchema.index({ createdAt: -1 });
+
 export const Task = model<ITask>("Task", taskSchema);
